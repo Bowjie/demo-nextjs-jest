@@ -1,0 +1,36 @@
+.btn-primary {
+    --bs-btn-bg: var(--primary);
+    --bs-btn-border-color: var(--primary);
+    --bs-btn-hover-bg: var(--primary-hover);
+    --bs-btn-hover-border-color: var(--primary-hover);
+    --bs-btn-active-bg: var(--primary-dark);
+    --bs-btn-active-border-color: var(--primary-dark);
+    --bs-btn-disabled-bg: var(--primary);
+    --bs-btn-disabled-border-color: var(--primary);
+  }
+  .btn-outline-primary {
+    --bs-btn-color: var(--primary);
+    --bs-btn-border-color: var(--primary);
+    --bs-btn-hover-bg: var(--primary);
+    --bs-btn-hover-border-color: var(--primary);
+    --bs-btn-active-bg: var(--primary);
+    --bs-btn-active-border-color: var(--primary);
+    --bs-btn-disabled-color: var(--primary);
+    --bs-btn-disabled-border-color: var(--primary);
+  }
+  .btn {
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
+  }
+  .modal {
+    --bs-modal-border-radius: var(--bs-border-radius-sm);
+  }
+  .list-group {
+    --bs-list-group-active-bg: var(--primary);
+    --bs-list-group-active-border-color: var(--primary);
+  }
+  .form-check-input {
+    &:checked {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+  }

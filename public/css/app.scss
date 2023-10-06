@@ -1,0 +1,337 @@
+/* // Nav Styles
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../font/Poppins-Regular.ttf') format('truetype');
+} */
+[data-bs-theme='dark'] {
+  --bs-body-bg: var(--body-dark);
+  .btn-outline-primary {
+    --bs-btn-color: var(--secondary);
+    --bs-btn-border-color: var(--secondary);
+  }
+  .table-danger {
+    .btn-outline-primary {
+      --bs-btn-color: var(--primary);
+      --bs-btn-border-color: var(--primary);
+    }
+  }
+  .dropdown-menu {
+    background-color: var(--popup-dark);
+    --bs-dropdown-link-hover-bg: var(--primary-hover);
+  }
+  nav.sidebar .nav-link {
+    color: #e9ecef80;
+    &:focus,
+    &:hover,
+    &.active {
+      color: #e9ecefbf;
+    }
+  }
+  .nav-separator {
+    color: #ced4da;
+  }
+  .bg-light,
+  .bg-white {
+    background-color: var(--body-dark) !important;
+  }
+  .table-wrapper,
+  .card:not(.no-dark) {
+    background-color: var(--semi-dark-bg);
+  }
+  .table:not(.table-warning):not(.table-primary) {
+    --bs-table-bg: transparent;
+  }
+  .btn-light {
+    --bs-btn-color: none;
+    --bs-btn-disabled-color: none;
+    --bs-btn-bg: var(--popup-dark);
+    --bs-btn-border-color: var(--popup-dark);
+    --bs-btn-disabled-bg: var(--body-dark);
+    --bs-btn-disabled-border-color: var(--body-dark);
+  }
+  .text-primary,
+  .text-dark {
+    color: var(--secondary) !important;
+  }
+  .table-primary {
+    --bs-table-color: var(--white);
+    --bs-table-bg: var(--primary-dark);
+    --bs-table-border-color: #bacbe64f;
+  }
+  .navbar .notification-item {
+    border-color: #494949;
+  }
+}
+[data-bs-theme='light'] {
+  body {
+    background-color: #f7f9fc;
+  }
+  .table-wrapper,
+  footer {
+    background-color: var(--white);
+  }
+  nav.sidebar {
+    background-color: var(--white);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  nav.sidebar .nav-link {
+    color: var(--default);
+    &:focus,
+    &:hover,
+    &.active {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+  .nav-separator {
+    color: var(--dark);
+  }
+  nav.navbar {
+    background-color: var(--white);
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* // letter-spacing: 0.4px; */
+}
+nav.sidebar {
+  min-width: 260px;
+  max-width: 260px;
+  transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out, margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
+  /* // height: 100%; */
+  .nav-dropdown .nav-link {
+    padding: 0.55rem 1.5rem 0.55rem 3.7rem;
+  }
+  &.collapsed {
+    margin-left: -260px;
+  }
+  .nav-link {
+    position: relative;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 0.625rem 0.8rem;
+    margin: 0 0.7rem;
+    &[data-bs-toggle='collapse']:before {
+      content: ' ';
+      border: solid;
+      border-width: 0 0.1rem 0.1rem 0;
+      display: inline-block;
+      padding: 2px;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 1rem;
+      right: 1.7rem;
+      transition: all 0.2s ease-out;
+    }
+    &[aria-expanded='true']:before,
+    &[data-bs-toggle='collapse']:not(.collapsed):before {
+      transform: rotate(-135deg);
+      top: 1.2rem;
+    }
+    > i {
+      margin-right: 1rem;
+      font-size: 16px;
+    }
+  }
+  .nav-content {
+    height: calc(100vh - 5px);
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin-top: 5px;
+  }
+  .nav-separator {
+    padding: 1.5rem 1.5rem 0.375rem;
+    font-size: 0.75rem;
+  }
+}
+.scrollbar-container {
+  overflow-y: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  &:hover {
+    overflow-y: auto;
+  }
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(168, 168, 168);
+    border: 2px solid transparent;
+    background-clip: content-box;
+    border-radius: 10px;
+  }
+}
+.navbar {
+  padding: 14px 20px;
+  .sidebar-toggle {
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    > i {
+      font-size: 26px;
+    }
+  }
+  ul.dropdown-menu {
+    min-width: 280px;
+  }
+  i.bi {
+    font-size: 20px;
+  }
+  .notification-item {
+    border-top: 1px solid;
+    border-color: #ded8d8;
+  }
+}
+.body-wrapper {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  /* border-top: 5px solid var(--primary); */
+  .main {
+    width: 100%;
+    height: calc(100vh - 5px);
+    overflow: auto;
+    margin-top: 5px;
+  }
+  .content {
+    padding: 2rem 2rem 1.5rem;
+  }
+}
+.td-btn {
+  padding: 0 !important;
+  width: 100px;
+  text-align: center;
+  vertical-align: middle;
+}
+.td-moreOption {
+  padding: 0 !important;
+  width: 70px;
+  text-align: center;
+  vertical-align: middle;
+}
+.table:not(.table-sm):not(.table-default) {
+  > :not(caption) > * > * {
+    padding: 1rem;
+  }
+}
+.card {
+  border: none;
+}
+.form-control:not(.default-bs-ctrl) {
+  /* // border-radius: var(--bs-border-radius-sm); */
+  padding: 12px 14px;
+  &:focus {
+    /* // border-color: var(--focus);
+    // box-shadow: inset 0 0 0 0.05rem var(--focus); */
+    box-shadow: none;
+  }
+  border: none;
+  &.is-invalid:focus {
+    box-shadow: none;
+  }
+}
+.MatFormContainer {
+  box-sizing: border-box;
+  position: relative;
+  label {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    right: 0;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translate(0, 13px);
+    transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, max-width 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+      font-size 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  }
+  .MatControlFieldset {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: -8px;
+    left: 0;
+    padding: 0 8px;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius-sm);
+    pointer-events: none;
+    transition: border-color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    text-align: left;
+    margin: 0;
+    overflow: hidden;
+    min-width: 0%;
+    .MatControlLegend {
+      float: unset;
+      width: auto;
+      overflow: hidden;
+      display: block;
+      visibility: hidden;
+      padding: 0;
+      font-size: 12px; //0.75em;
+      max-width: 0.01px;
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+    .MatLabelHolder {
+      padding-left: 5px;
+      padding-right: 5px;
+      display: inline-block;
+      opacity: 0;
+      visibility: visible;
+    }
+  }
+  .form-control.is-invalid ~ .MatControlFieldset {
+    border-color: var(--bs-form-invalid-border-color) !important;
+  }
+  // input.form-control:hover:not(:focus) + label + .MatControlFieldset,
+  // select.form-control:hover:not(:focus) + label + .MatControlFieldset {
+
+  // }
+  input.form-control:not(:focus)::placeholder,
+  textarea.form-control:not(:focus)::placeholder {
+    opacity: 0;
+  }
+  select.form-control:focus + label,
+  input.form-control:focus + label,
+  textarea.form-control:focus + label {
+    color: var(--focus);
+  }
+  select.form-control:focus + label,
+  textarea.form-control:focus + label,
+  textarea.form-control:not(:placeholder-shown) + label,
+  input.form-control:focus + label,
+  input.form-control:not(:placeholder-shown) + label,
+  input.form-control.labeled + label {
+    transform: translate(0, -8px);
+    font-size: 12px; //0.75em;
+  }
+  select.form-control:focus + label + .MatControlFieldset > .MatControlLegend,
+  textarea.form-control:focus + label + .MatControlFieldset > .MatControlLegend,
+  textarea.form-control:not(:placeholder-shown) + label + .MatControlFieldset > .MatControlLegend,
+  input.form-control:focus + label + .MatControlFieldset > .MatControlLegend,
+  input.form-control:not(:placeholder-shown) + label + .MatControlFieldset > .MatControlLegend,
+  input.form-control.labeled + label + .MatControlFieldset > .MatControlLegend {
+    max-width: 100%;
+  }
+  select.form-control:focus + label + .MatControlFieldset,
+  textarea.form-control:focus + label + .MatControlFieldset,
+  input.form-control:focus + label + .MatControlFieldset {
+    border-width: 2px;
+    border-color: var(--focus);
+  }
+}
+.form-switch .form-check-input {
+  height: 22px;
+  width: 40px;
+}
+
+.login-container {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
