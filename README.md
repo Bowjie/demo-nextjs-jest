@@ -7,8 +7,11 @@ First, install node modules then run development server:
 *install nodejs v18
 
 ```bash
-npm install
-# then
+To install node_modules: npm install
+To run test: npm test -- --Login.test.tsx --coverage
+
+If you want to check the working UI run command below.
+
 npm run dev
 # or
 yarn dev
