@@ -20,6 +20,7 @@ pnpm dev
 # or
 bun dev
 ```
+![image](https://github.com/Bowjie/demo-nextjs-jest/assets/36789696/39da4443-6e0d-4b15-b03c-e8f50c82f97c)
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
